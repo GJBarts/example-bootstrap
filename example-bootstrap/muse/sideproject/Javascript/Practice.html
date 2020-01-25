@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+#container {/*Container for animation*/
+width: 400px;
+height: 400px;
+position: relative;
+background: yellow;
+}
+#animate { /*animation details*/
+width: 50px;
+height: 50px;
+position: absolute;
+background-color: red;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <button onclick="myMove()">Click This</button>
+</p>
+<div id="container">
+    <div id="animate"></div>
+</div>
+<script>
+    function myMove() {//function for motion type
+        var elem = document.getElementById("animate");//Dom Method
+        var pos = 0;
+        var id = setInterval(frame, 5);//time allocated
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.bottom = pos + 'px';//Nature of movement
+                elem.style.right = pos + 'px';
+            }
+        }
+    }
+    function myMove1() {
+        var elem = document.getElementById("animate");//Dom Method
+        var pos = 0;
+        var id = setInterval(frame, 20);//time allocated
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.left = pos + 'px';//Nature of movement
+                elem.style.right = pos + 'px';
+            }
+        }
+
+    }
+    function myMove2() {
+        var elem = document.getElementById("animate");//Dom Method
+        var pos = 0;
+        var id = setInterval(frame, 20);//time allocated
+        function frame() {
+            if (pos == 350) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.right.bottom = pos + 'px';//Nature of movement
+                elem.style.left = pos + 'px';
+            }
+        }
+
+
+    }
+    </script>
+<span><button onclick="myMove1()">Click This</button>
+
+</span>
+<article><button onclick="myMove2()">Click This</button></article>
+</body>
+</html>
